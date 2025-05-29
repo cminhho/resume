@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chung Ho - Technical Leadership Impact</title>
+    <style>
+        :root {
+            --primary: #0a2463;
+            --secondary: #3e92cc;
+            --accent: #4ec5de;
+            --light: #f5f5f5;
+            --dark: #1e1e24;
+            --success: #2ecc71;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 18px;
+            color: var(--secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .achievement-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        
+        .card-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px 25px;
+            position: relative;
+        }
+        
+        .card-header h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .card-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .highlight-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .highlight-text {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .stat-container {
+            margin-top: 15px;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .stat-item i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .achievement-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .achievement-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .progress-value {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+        
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        .stat-box {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .stat-box .number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-box .label {
+            font-size: 12px;
+            color: var(--dark);
+            opacity: 0.7;
+        }
+        
+        .key-impact {
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+        
+        .key-impact h2 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .impact-metrics {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .impact-item {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 0 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .impact-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--secondary);
+        }
+        
+        .impact-item .value {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+        
+        .impact-item .description {
+            font-size: 14px;
+            color: var(--dark);
+            margin-top: 10px;
+        }
+        
+        .chart-container {
+            height: 120px;
+            position: relative;
+            margin-top: 15px;
+        }
+        
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            height: 100%;
+            justify-content: space-between;
+        }
+        
+        .bar {
+            background: var(--accent);
+            width: 18%;
+            border-radius: 6px 6px 0 0;
+            position: relative;
+        }
+        
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: var(--dark);
+        }
+        
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .footer-note {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .achievement-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-metrics {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .impact-item {
+                margin: 0;
+            }
+        }
+
+        /* Custom styles for circular progress */
+        .circle-progress-container {
+            display: inline-block;
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 15px 0;
+        }
+        
+        .outer-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .inner-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .progress-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(var(--accent) var(--progress), transparent var(--progress));
+            mask: radial-gradient(transparent 55%, black 56%);
+            -webkit-mask: radial-gradient(transparent 55%, black 56%);
+        }
+        
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+            padding: 0 20px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: var(--secondary);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            width: 45%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            margin-left: auto;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+        
+        .timeline-item:nth-child(odd)::before {
+            left: -33px;
+        }
+        
+        .timeline-item:nth-child(even)::before {
+            right: -33px;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CHUNG HO: TECHNICAL LEADERSHIP IMPACT</h1>
+            <p>Architecting Fintech Platforms Across Southeast Asia and Africa</p>
+        </div>
+
+        <div class="impact-metrics">
+            <div class="impact-item">
+                <div class="value">$300M+</div>
+                <div class="description">Annual Loan Volume Processed</div>
+            </div>
+            <div class="impact-item">
+                <div class="value">300,000</div>
+                <div class="description">Monthly Loan Disbursements</div>
+            </div>
+            <div class="impact-item">
+                <div class="value">15+</div>
+                <div class="description">Engineers Led Across 2 Scrum Teams</div>
+            </div>
+            <div class="impact-item">
+                <div class="value">3</div>
+                <div class="description">Countries with Deployed Systems</div>
+            </div>
+        </div>
+
+        <div class="achievement-grid">
+            <div class="achievement-card">
+                <div class="card-header">
+                    <h2>GLOBAL LENDING INFRASTRUCTURE</h2>
+                    <p>Multi-country merchant lending platform</p>
+                    <div class="achievement-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="highlight-number">5 → 3</div>
+                    <div class="highlight-text">Products deployed across three countries</div>
+                    
+                    <div class="chart-container">
+                        <div class="bar-chart">
+                            <div class="bar" style="height: 70%;">
+                                <div class="bar-value">$120M</div>
+                                <div class="bar-label">South Africa</div>
+                            </div>
+                            <div class="bar" style="height: 85%;">
+                                <div class="bar-value">$150M</div>
+                                <div class="bar-label">Philippines</div>
+                            </div>
+                            <div class="bar" style="height: 40%;">
+                                <div class="bar-value">$30M</div>
+                                <div class="bar-label">Indonesia</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-container">
+                        <div class="stat-item">
+                            <i>➤</i>
+                            <span>AWS Serverless architecture reduced operational costs by 60%</span>
+                        </div>
+                        <div class="stat-item">
+                            <i>➤</i>
+                            <span>Seamless integration with Mambu, CRM, Core Banking</span>
+                        </div>
+                        <div class="stat-item">
+                            <i>➤</i>
+                            <span>Event-driven design ensures system resilience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="card-header">
+                    <h2>ADVANCE LOAN PLATFORM</h2>
+                    <p>High-throughput digital lending solution</p>
+                    <div class="achievement-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M4 10h3v7H4v-7zm6.5 0h3v7h-3v-7zM2 19h20v3H2v-3zm15-9h3v7h-3v-7zm-5-7L2 6v2h20V6L12 3z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="highlight-number">350,000+</div>
+                    <div class="highlight-text">Eligible customers served</div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-value" style="width: 85%;"></div>
+                    </div>
+                    
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="number">300K</div>
+                            <div class="label">Monthly Disbursements</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">1000s</div>
+                            <div class="label">TPS at Peak Load</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">99.99%</div>
+                            <div class="label">System Uptime</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-container">
+                        <div class="stat-item">
+                            <i>➤</i>
+                            <span>Automated repayment workflows supporting 300,000+ loans</span>
+                        </div>
+                        <div class="stat-item">
+                            <i>➤</i>
+                            <span>Fault-tolerant architecture with low latency</span>
+                        </div>
+                        <div class="stat-item">
+                            <i>➤</i>
+                            <span>Comprehensive monitoring with Datadog integration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="card-header">
+                    <h2>BUY NOW PAY LATER PLATFORM</h2>
+                    <p>Seamless retail financing solution</p>
+                    <div class="achievement-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="highlight-number">25,000</div>
+                    <div class="highlight-text">Integrated merchant touchpoints</div>
+                    
+                    <div class="circle-progress-container">
+                        <div class="outer-circle">
+                            <div class="inner-number">80%</div>
+                        </div>
+                        <div class="progress-circle" style="--progress: 80%"></div>
+                    </div>
+                    
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="number">20K</div>
+                            <div class="label">Physical Stores</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">5K</div>
+                            <div class="label">E-commerce Sites</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">200K+</div>
+                            <div class="label">Customers Onboarded</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-container">
+                        <div class="stat-item">
+                            <i>➤</i>
+                            <span>Java/Spring Boot microservices on Amazon EKS</span>
+                        </div>
+                        <div class="stat-item">
+                            <i>➤</i>
+                            <span>Real-time transaction processing with Kafka</span>
+                        </div>
+                        <div class="stat-item">
+                            <i>➤</i>
+                            <span>Integrated loyalty programs driving repeat usage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="card-header">
+                    <h2>ENGINEERING EXCELLENCE</h2>
+                    <p>Technical leadership and team development</p>
+                    <div class="achievement-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="highlight-number">15+</div>
+                    <div class="highlight-text">Engineers led across 2 Scrum teams</div>
+                    
+                    <div class="chart-container">
+                        <div class="bar-chart">
+                            <div class="bar" style="height: 60%; background: #3e92cc;">
+                                <div class="bar-value">60%</div>
+                                <div class="bar-label">Efficiency Gain</div>
+                            </div>
+                            <div class="bar" style="height: 90%; background: #2ecc71;">
+                                <div class="bar-value">90%</div>
+                                <div class="bar-label">Code Quality</div>
+                            </div>
+                            <div class="bar" style="height: 75%; background: #4ec5de;">
+                                <div class="bar-value">75%</div>
+                                <div class="bar-label">Deployment Speed</div>
+                            </div>
+                            <div class="bar" style="height: 85%; background: #3e92cc;">
+                                <div class="bar-value">85%</div>
+                                <div class="bar-label">Team Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-container">
+                        <div class="stat-item">
+                            <i>➤</i>
+                            <span>Established standardized CI/CD pipelines reducing deployment time by 70%</span>
+                        </div>
+                        <div class="stat-item">
+                            <i>➤</i>
+                            <span>Implemented comprehensive code quality standards</span>
+                        </div>
+                        <div class="stat-item">
+                            <i>➤</i>
+                            <span>Created architectural governance frameworks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-note">
+            <p>Recognized as Top Performance Employee of the Year at Tyme (2023, 2024) | AWS Certified Solutions Architect & Developer</p>
+        </div>
+    </div>
+</body>
+</html>

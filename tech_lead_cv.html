@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical Lead CV of Chung Ho - Cloud Architecture, Distributed Systems, FinTech">
+    <meta name="keywords" content="Chung Ho, Technical Lead, Software Engineer, AWS, Serverless, Microservices, Cloud Architecture">
+    <meta name="author" content="Chung Ho">
+    <title>Chung Ho | Technical Lead</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2b2b2b; /* Main text color - darker for better readability */
+            --accent-color: #8b0000; /* Deep red for metrics - classic academic emphasis */
+            --light-text: #555555;
+            --divider-color: #dddddd;
+            --paper-color: #FFFEF7; /* Slight cream color for paper-like feel */
+            --section-spacing: 2rem;
+            --side-margin: 5rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Pro', Georgia, serif;
+            color: var(--primary-color);
+            line-height: 1.5;
+            max-width: 60rem;
+            margin: 0 auto;
+            padding: 2.5rem;
+            background-color: var(--paper-color);
+            font-size: 11pt;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: var(--section-spacing);
+            border-bottom: 1px solid var(--divider-color);
+            padding-bottom: 1.5rem;
+        }
+        
+        .name {
+            font-size: 24pt;
+            font-weight: 600;
+            letter-spacing: 0.75px;
+            margin-bottom: 0.75rem;
+            font-variant: small-caps;
+        }
+        
+        .title {
+            font-size: 12pt;
+            font-weight: 400;
+            color: var(--light-text);
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 10pt;
+            justify-content: center;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 0.5px dotted var(--light-text);
+            padding-bottom: 1px;
+        }
+        
+        .contact-info a:hover {
+            border-bottom-style: solid;
+        }
+        
+        .section {
+            margin-bottom: var(--section-spacing);
+            padding: 0 var(--side-margin);
+        }
+        
+        .section-title {
+            font-size: 14pt;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            font-variant: small-caps;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 0.5px;
+            background-color: var(--divider-color);
+        }
+        
+        .summary {
+            margin-bottom: 1rem;
+            font-size: 11pt;
+            line-height: 1.7;
+            text-align: justify;
+            hyphens: auto;
+        }
+        
+        .job {
+            margin-bottom: 1.8rem;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.4rem;
+        }
+        
+        .company-title {
+            font-weight: 600;
+            font-size: 12pt;
+        }
+        
+        .company-name {
+            font-weight: 600;
+        }
+        
+        .job-location {
+            font-size: 10pt;
+            color: var(--light-text);
+            margin-bottom: 0.6rem;
+            font-style: italic;
+        }
+        
+        .job-duration {
+            color: var(--light-text);
+            font-size: 10pt;
+            font-style: italic;
+        }
+        
+        .job-bullets {
+            list-style-type: none;
+            margin-top: 0.7rem;
+        }
+        
+        .job-bullets li {
+            margin-bottom: 0.6rem;
+            position: relative;
+            padding-left: 1.2rem;
+            line-height: 1.55;
+            text-align: justify;
+            hyphens: auto;
+        }
+        
+        .job-bullets li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .project {
+            margin-bottom: 1.7rem;
+        }
+        
+        .project-title {
+            font-weight: 600;
+            font-size: 12pt;
+            margin-bottom: 0.3rem;
+        }
+        
+        .technologies {
+            font-size: 10pt;
+            color: var(--light-text);
+            margin-bottom: 0.6rem;
+            font-style: italic;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .skill-title {
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            font-size: 11pt;
+        }
+        
+        .skill-list {
+            font-size: 10.5pt;
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        .metric {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        
+        @media print {
+            body {
+                padding: 0.5in;
+                background-color: white;
+                font-size: 10pt;
+            }
+            
+            a {
+                color: black;
+                text-decoration: none;
+                border-bottom: none;
+            }
+            
+            @page {
+                margin: 0.5in;
+                size: letter;
+            }
+            
+            .section-title::after {
+                background-color: #999;
+            }
+            
+            .metric {
+                color: black;
+                font-weight: bold;
+            }
+            
+            .job-bullets li::before {
+                color: #555;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 1.5rem;
+                font-size: 10pt;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
+            }
+            
+            .skills-container {
+                flex-direction: column;
+            }
+            
+            .section {
+                padding: 0 0.5rem;
+            }
+            
+            :root {
+                --side-margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name">Chung Ho</div>
+        <div class="title">Technical Lead · Cloud Architecture · Distributed Systems</div>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>(+84) 906 246 489</span>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:hmchung92@gmail.com">hmchung92@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <a href="https://www.linkedin.com/in/ho-minh-chung" target="_blank" rel="noopener">linkedin.com/in/ho-minh-chung</a>
+            </div>
+            <div class="contact-item">
+                <a href="https://github.com/hmchung92" target="_blank" rel="noopener">github.com/hmchung92</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="summary">
+            Hands-on Technical Lead with 10+ years designing distributed systems that solve real business problems. Architected mission-critical fintech platforms processing $300M+ annual transaction volume using serverless and microservices approaches. Expert in translating complex requirements into resilient cloud architectures that balance performance, cost, and engineering velocity. Proven track record leading high-performing engineering teams to deliver under pressure.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Experience</div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="company-title"><span class="company-name">TymeX</span> — Technical Lead</div>
+                <div class="job-duration">Mar 2021 - Present</div>
+            </div>
+            <div class="job-location">Ho Chi Minh City, Vietnam</div>
+            <ul class="job-bullets">
+                <li>Led architecture and development of a unified merchant lending platform that <span class="metric">increased loan volume by 40%</span> across three countries (South Africa, Philippines, Indonesia), built using Python and AWS serverless stack.</li>
+                <li>Engineered a high-throughput transaction processing system that <span class="metric">handles 3000+ TPS</span> during peak periods with 99.99% uptime, leveraging DynamoDB, Lambda, and SQS to manage 300,000 monthly loans.</li>
+                <li>Designed an event-driven architecture with Kafka that <span class="metric">reduced settlement times from 24 hours to 30 minutes</span>, enabling real-time merchant payouts and improving partner satisfaction by 35%.</li>
+                <li>Implemented an intelligent loan decisioning system using ML models that <span class="metric">reduced default rates by 12%</span> while increasing approval rates, resulting in $2.3M additional annual revenue.</li>
+                <li>Led a Scrum team that <span class="metric">delivered a complete BNPL solution in 4 months</span>, which scaled to support 200,000+ customers and 25,000+ merchant locations.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="company-title"><span class="company-name">TMA Solutions</span> — Technical Lead</div>
+                <div class="job-duration">Jan 2019 - Feb 2021</div>
+            </div>
+            <div class="job-location">Ho Chi Minh City, Vietnam</div>
+            <ul class="job-bullets">
+                <li>Architected a fleet management SaaS platform that <span class="metric">reduced customer onboarding time from weeks to days</span>, implementing a microservices architecture with ASP.NET Core, Docker, and Kubernetes.</li>
+                <li>Led development of a component library that <span class="metric">accelerated UI development by 75%</span> across 10+ admin applications, enabling rapid feature development and consistent UX.</li>
+                <li>Designed and implemented an event-sourcing system with Kafka that <span class="metric">reduced data synchronization errors by 90%</span>, ensuring data consistency across distributed services.</li>
+                <li>Mentored 15+ engineers through structured 1:1s and technical deep dives, <span class="metric">improving team retention by 30%</span> and developing 3 engineers into senior roles.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="company-title"><span class="company-name">TMA Solutions</span> — Senior Software Engineer</div>
+                <div class="job-duration">Mar 2016 - Dec 2018</div>
+            </div>
+            <div class="job-location">Ho Chi Minh City, Vietnam</div>
+            <ul class="job-bullets">
+                <li>Led a team that delivered 4 Google Cloud Search applications for enterprises like Broadcom Inc., <span class="metric">reducing search time for critical business documents by 70%</span>.</li>
+                <li>Refactored a legacy network management system to a modern web architecture, <span class="metric">reducing page load times by 65%</span> and enabling support for 10,000+ concurrent device connections.</li>
+                <li>Implemented a caching strategy that <span class="metric">reduced API response times by 80%</span> for frequently accessed resources, significantly improving application responsiveness.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="company-title"><span class="company-name">TMA Solutions</span> — Software Engineer</div>
+                <div class="job-duration">May 2014 - Feb 2016</div>
+            </div>
+            <div class="job-location">Ho Chi Minh City, Vietnam</div>
+            <ul class="job-bullets">
+                <li>Developed and maintained RESTful APIs for Nokia's network management systems, <span class="metric">handling 1000+ API requests per second</span> with 99.9% uptime.</li>
+                <li>Built dynamic UI components using Angular that <span class="metric">reduced form rendering time by 40%</span>, enabling efficient network device configuration.</li>
+                <li>Recognized with Nokia High Performance Award for implementing a data processing pipeline that <span class="metric">reduced batch processing time from hours to minutes</span>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Key Projects</div>
+        
+        <div class="project">
+            <div class="project-title">Merchant Cash Advance Platform | South Africa, Philippines, Indonesia</div>
+            <div class="technologies">Python, AWS (Lambda, API Gateway, ALB, DynamoDB, S3, SQS), Mambu, Segment, Datadog, Databricks</div>
+            <ul class="job-bullets">
+                <li><span class="metric">Architected and led end-to-end development</span> of a globally scalable Merchant Lending Platform deployed across three countries, serving millions of customers and thousands of merchants.</li>
+                <li>Designed and implemented a <span class="metric">serverless-first architecture</span> ensuring high scalability, cost-efficiency, and rapid deployment cycles across markets with different regulatory requirements.</li>
+                <li>Integrated with critical third-party systems enabling seamless data flow, real-time analytics, and robust monitoring across the platform.</li>
+                <li>Led <span class="metric">two cross-functional agile teams (15+ engineers)</span>, defining engineering best practices, code quality standards, CI/CD pipelines, and architectural governance.</li>
+                <li>Deployed <span class="metric">5 Merchant Cash Advance products across 3 countries</span>, reducing development time by 60% for each new market launch through shared infrastructure.</li>
+            </ul>
+        </div>
+        
+        <div class="project">
+            <div class="project-title">Grant Advance Product | South Africa</div>
+            <div class="technologies">Python, AWS Serverless, DynamoDB, Lambda, API Gateway, SQS</div>
+            <ul class="job-bullets">
+                <li>Led the <span class="metric">full lifecycle development</span> of a high-impact Grant Advance product solution aimed at supporting over <span class="metric">250,000 whitelisted customers</span>.</li>
+                <li>Engineered a <span class="metric">high-throughput transaction processing engine</span> capable of handling <span class="metric">200,000 monthly transactions</span> and <span class="metric">thousands of TPS during peak periods</span>.</li>
+                <li>Implemented resilient error handling and retry mechanisms that achieved <span class="metric">99.99% transaction success rate</span>, ensuring reliable financial services.</li>
+                <li>Designed an automated repayment workflow that maintained <span class="metric">low default rates</span> while ensuring seamless customer experience and regulatory compliance.</li>
+            </ul>
+        </div>
+        
+        <div class="project">
+            <div class="project-title">Buy Now Pay Later (BNPL) Platform | South Africa</div>
+            <div class="technologies">Java, Spring Boot, Amazon EKS, Kafka, WSO2, Mambu, Databricks</div>
+            <ul class="job-bullets">
+                <li>Led solution architecture and implementation of a BNPL product tailored for the South African market, <span class="metric">rapidly scaling to support 20,000 physical retail stores, 5,000 e-commerce merchants, and 200,000+ customer onboards</span>.</li>
+                <li>Architected a <span class="metric">cloud-native microservices ecosystem</span> balancing modularity, security, and scalability requirements.</li>
+                <li>Delivered core features including: full customer onboarding pipeline, automated settlement workflows, advanced accounting modules, purchase lifecycle management, card-on-file functionality, and incentive programs.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Skills</div>
+        <div class="skills-container">
+            <div class="skill-category">
+                <div class="skill-title">Technical Leadership</div>
+                <div class="skill-list">System Design, Technical Roadmapping, Architecture Reviews, API Design, Production Incident Management, Performance Optimization</div>
+                
+                <div class="skill-title">Programming Languages</div>
+                <div class="skill-list">Python, Java, TypeScript, JavaScript, SQL, Bash</div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-title">Cloud & Infrastructure</div>
+                <div class="skill-list">AWS (Lambda, API Gateway, DynamoDB, EKS, SQS, S3, CloudWatch), Kubernetes, Docker, Terraform, AWS CDK, CI/CD Pipelines</div>
+                
+                <div class="skill-title">Data & Integration</div>
+                <div class="skill-list">Event-Driven Architecture, Kafka, Redis, MongoDB, PostgreSQL, Databricks, ETL Pipelines</div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-title">Frameworks & Tools</div>
+                <div class="skill-list">Spring Boot, Flask, Express, React, Angular, Serverless Framework, Git, GitHub Actions, Jenkins, Datadog, Prometheus</div>
+                
+                <div class="skill-title">Methods & Practices</div>
+                <div class="skill-list">Microservices, Serverless Architecture, TDD, CI/CD, Agile/Scrum, Distributed Systems, Tech Mentoring</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education & Recognition</div>
+        <div class="job">
+            <div class="job-header">
+                <div class="company-title">Bachelor of Information Technology — <span class="company-name">CTU University</span></div>
+                <div class="job-duration">2010 - 2013</div>
+            </div>
+        </div>
+        
+        <ul class="job-bullets">
+            <li>Top Performance Employee of the Year — Tyme (2021, 2022, 2024)</li>
+            <li>Top Performing Employee of the Year — TMA Solutions (2015, 2016, 2017, 2018, 2019, 2020)</li>
+            <li>Nokia High Performance Award — Recognized for outstanding technical achievements (2015)</li>
+        </ul>
+    </div>
+</body>
+</html> 

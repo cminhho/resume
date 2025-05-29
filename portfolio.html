@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional resume collection of Chung Ho, Technical Lead specializing in enterprise banking and fintech solutions">
+    <meta name="keywords" content="Chung Ho, resume, CV, technical lead, fintech, banking">
+    <meta name="author" content="Chung Ho">
+    <title>CHUNG HO | Resume Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Georgia:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #343a40;
+            --text-light: #6c757d;
+            --border: #dee2e6;
+            --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            --radius: 6px;
+            --transition: all 0.2s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', Georgia, serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            font-weight: 400;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+        
+        .header-divider {
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 0 auto 24px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn-primary {
+            background-color: var(--accent);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-buttons {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+        
+        .main-content {
+            padding: 60px 0;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 28px;
+            font-family: Georgia, serif;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+            margin: 10px auto 0;
+        }
+        
+        .formats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .format-card {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        
+        .format-card:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            background-color: var(--secondary);
+            padding: 15px 20px;
+            color: white;
+            border-top-left-radius: var(--radius);
+            border-top-right-radius: var(--radius);
+        }
+        
+        .card-header h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .card-badge {
+            display: inline-block;
+            background-color: #3498db;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-body p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .format-links {
+            list-style: none;
+        }
+        
+        .format-links li {
+            margin-bottom: 8px;
+        }
+        
+        .format-links a {
+            display: flex;
+            align-items: center;
+            color: var(--secondary);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            font-size: 14px;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+        }
+        
+        .format-links a:hover {
+            background-color: #e9ecef;
+            color: var(--dark);
+        }
+        
+        .format-links a:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+        }
+        
+        .format-links a::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        
+        .format-links .html-link::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233498db' viewBox='0 0 24 24'%3E%3Cpath d='M12 17.56l4.07-1.13.55-6.1H9.38L9.2 8.3h7.6l.2-1.99H7l.56 6.01h6.89l-.23 2.58-2.22.6-2.22-.6-.14-1.66h-2l.29 3.19L12 17.56zM4.07 3h15.86L18.5 19.2 12 21 5.5 19.2 4.07 3z'/%3E%3C/svg%3E");
+        }
+        
+        .format-links .pdf-link::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233498db' viewBox='0 0 24 24'%3E%3Cpath d='M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v1.25c0 .41-.34.75-.75.75s-.75-.34-.75-.75V8c0-.55.45-1 1-1H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2c-.28 0-.5-.22-.5-.5v-5c0-.28.22-.5.5-.5h2c.83 0 1.5.67 1.5 1.5v3zm4-3.75c0 .41-.34.75-.75.75H19v1h.75c.41 0 .75.34.75.75s-.34.75-.75.75H19v1.25c0 .41-.34.75-.75.75s-.75-.34-.75-.75V8c0-.55.45-1 1-1h1.25c.41 0 .75.34.75.75zM9 9.5h1v-1H9v1zM3 6c-.55 0-1 .45-1 1v13c0 1.1.9 2 2 2h13c.55 0 1-.45 1-1s-.45-1-1-1H5c-.55 0-1-.45-1-1V7c0-.55-.45-1-1-1zm11 5.5h1v-3h-1v3z'/%3E%3C/svg%3E");
+        }
+        
+        .format-links .tex-link::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233498db' viewBox='0 0 24 24'%3E%3Cpath d='M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z'/%3E%3C/svg%3E");
+        }
+        
+        .format-links .md-link::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233498db' viewBox='0 0 24 24'%3E%3Cpath d='M20.56 3.91c.59.59.59 1.54 0 2.12l-3.89 3.89-2.12-2.12 3.89-3.89c.59-.58 1.54-.58 2.12 0zM3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z'/%3E%3C/svg%3E");
+        }
+        
+        .contact-section {
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            border-radius: var(--radius);
+            margin-top: 20px;
+        }
+        
+        .contact-title {
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-family: Georgia, serif;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .footer-contact {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .footer-contact a {
+            color: #f8f9fa;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+        
+        .footer-contact a:hover {
+            opacity: 1;
+            color: #fff;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            opacity: 0.6;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .formats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CHUNG HO</h1>
+            <div class="header-divider"></div>
+            <p class="subtitle">Technical Lead • Cloud Architect • Fintech Specialist</p>
+            <div class="header-buttons">
+                <a href="index.html" class="btn btn-primary" aria-label="View current resume">View Current Resume</a>
+                <a href="https://www.linkedin.com/in/ho-minh-chung" class="btn btn-secondary" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">Connect on LinkedIn</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="container">
+            <section class="section" id="formats">
+                <h2 class="section-title">Resume Collection</h2>
+                
+                <div class="formats-grid">
+                    <div class="format-card">
+                        <div class="card-header">
+                            <h2>HTML Resumes <span class="card-badge">Featured</span></h2>
+                        </div>
+                        <div class="card-body">
+                            <p>Professional web-based resume formats with clean typography and responsive design.</p>
+                            <ul class="format-links">
+                                <li><a href="index.html" class="html-link">Current Resume (Minimal Design)</a></li>
+                                <li><a href="formats/html/resume-minimal-v1.html" class="html-link">Minimal Design</a></li>
+                                <li><a href="formats/html/resume-achievements-v1.html" class="html-link">Achievements Design</a></li>
+                                <li><a href="formats/html/resume-linkedin-v1.html" class="html-link">LinkedIn Optimized</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="format-card">
+                        <div class="card-header">
+                            <h2>PDF Documents</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>Print-ready PDF resumes optimized for formal applications and recruiters.</p>
+                            <ul class="format-links">
+                                <li><a href="formats/pdf/resume-minimal-v1.pdf" class="pdf-link">Minimal Design (PDF)</a></li>
+                                <li><a href="formats/pdf/resume-formal-v1.pdf" class="pdf-link">Formal Design (PDF)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="format-card">
+                        <div class="card-header">
+                            <h2>LaTeX Format</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>LaTeX resume template with precise typographic control for academic environments.</p>
+                            <ul class="format-links">
+                                <li><a href="formats/tex/resume-formal-v2.tex" class="tex-link">Formal LaTeX Design</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="format-card">
+                        <div class="card-header">
+                            <h2>Markdown Format</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>Simple text-based format compatible with version control systems.</p>
+                            <ul class="format-links">
+                                <li><a href="formats/md/resume-markdown-v2.md" class="md-link">Standard Markdown</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-section">
+                    <h3 class="contact-title">Contact Information</h3>
+                    <div class="contact-links">
+                        <a href="mailto:hmchung92@gmail.com" aria-label="Email Me">Email: hmchung92@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/ho-minh-chung" target="_blank" rel="noopener" aria-label="LinkedIn Profile">LinkedIn: ho-minh-chung</a>
+                        <a href="https://github.com/cminhho" target="_blank" rel="noopener" aria-label="GitHub Profile">GitHub: cminhho</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                &copy; <script>document.write(new Date().getFullYear())</script> Chung Ho. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

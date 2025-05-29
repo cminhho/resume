@@ -1,0 +1,232 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome}
+\usepackage{xcolor}
+\usepackage{geometry}
+\input{glyphtounicode}
+\usepackage{pifont}
+
+% Define custom colors
+\definecolor{primarycolor}{RGB}{70, 70, 120}
+\definecolor{sectioncolor}{RGB}{50, 50, 80}
+\definecolor{accentcolor}{RGB}{180, 50, 50}
+
+% Serif font selection for a more professional look
+\usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins for better spacing
+\geometry{
+  left=0.75in,
+  top=0.6in,
+  right=0.75in,
+  bottom=0.6in,
+  footskip=.5cm
+}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Enhanced section formatting
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\Large\color{sectioncolor}
+}{}{0em}{\MakeUppercase}[\color{primarycolor}\titlerule \vspace{-1pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands with enhanced spacing and formatting
+\newcommand{\resumeItem}[1]{
+  \item\large{
+    {#1 \vspace{2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      {\Large\textbf{#1}} & {\large\color{primarycolor}#2} \\
+      \textit{\large#3} & \textit{\large #4} \\
+    \end{tabular*}\vspace{1pt}
+}
+
+% Improved job description with minimal vertical space
+\newcommand{\resumeJobDescription}[1]{
+  \vspace{-3pt}
+  \begin{minipage}[t]{1.0\textwidth}
+    \large{#1}
+  \end{minipage}
+  \vspace{-3pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-2pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% Custom list environments with improved spacing and NO left margin
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}, itemsep=1pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, label=\textbullet, itemsep=1pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{1pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge\textbf{\textcolor{sectioncolor}{CHUNG HO}}} \\ \vspace{5pt}
+    \large \faPhone\ (+84) 906 246 489 $|$ \faEnvelope\ \href{mailto:hmchung92@gmail.com}{hmchung92@gmail.com} $|$ 
+    \faLinkedin\ \href{https://www.linkedin.com/in/ho-minh-chung}{linkedin.com/in/ho-minh-chung}
+\end{center}
+
+%----------CAREER SUMMARY----------
+\section{CAREER SUMMARY}
+Results-driven Technical Lead with 10+ years of experience in designing and delivering scalable fintech platforms across digital banking, cloud-native systems, and enterprise software. Expertise in AWS-based serverless architectures, microservices, and high-throughput transaction systems.
+
+Currently serving as Backend Technical Lead at Tyme, one of the world's fastest-growing digital banking groups. Successfully architected and delivered multi-country lending platforms across Southeast Asia and Africa — handling over \$300M in annual loan volume and serving millions of users.
+
+%----------WORK EXPERIENCE----------
+\section{WORK EXPERIENCE}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Technical Lead}{2021 - Present}
+{TymeX - one of the world's fastest-growing digital banking groups}{}
+
+\resumeJobDescription{Led backend architecture and engineering strategy for scalable, cloud-native lending platforms deployed across three countries. Delivered systems handling over \$300M in annual loan volume, serving millions of users and thousands of merchants.}
+
+\resumeItemListStart
+\resumeItem{\textbf{Architected a multi-country Merchant Lending Platform} (5 loan products across 3 countries)}
+\begin{itemize}[leftmargin=0.15in, label={--}, itemsep=0pt, topsep=1pt]
+    \item Led end-to-end development of a unified merchant lending platform deployed in South Africa, Philippines, and Indonesia.
+    \item Built using Python and AWS Serverless Stack (Lambda, API Gateway, DynamoDB, ALB, S3, SQS) to enable cost-effective scalability and rapid deployment cycles.
+    \item Integrated with Mambu, CRM, Core Banking, Segment, Datadog, Databricks for real-time analytics and operational visibility.
+    \item Led 2 Scrum teams totaling 15+ engineers, defining code quality standards, CI/CD pipelines, and architectural governance frameworks.
+\end{itemize}
+
+\resumeItem{\textbf{Designed and delivered the full lifecycle of an Advance Loan Platform}}
+\begin{itemize}[leftmargin=0.15in, label={--}, itemsep=0pt, topsep=1pt]
+    \item Led a cross-functional Scrum team to design and ship a full-cycle digital lending solution for TymeBank, serving over 350,000 eligible customers.
+    \item Architected a scalable backend system capable of processing 300,000 monthly loan disbursements, with throughput optimized for thousands of transactions per second during peak traffic.
+    \item Designed and implemented automated repayment workflows to support efficient collection across over 300,000 active loans per month, ensuring system resilience, low latency, and high fault tolerance.
+\end{itemize}
+
+\resumeItem{\textbf{Led solution architecture for a Buy Now Pay Later (BNPL) Platform}}
+\begin{itemize}[leftmargin=0.15in, label={--}, itemsep=0pt, topsep=1pt]
+    \item Designed and delivered a scalable BNPL solution for TymeBank in South Africa, enabling instant credit access at both physical and online retail points.
+    \item Architected a cloud-native backend using Java/Spring Boot microservices on Amazon EKS, integrated with Kafka, WSO2, Mambu, and Databricks for real-time transaction processing and analytics.
+    \item Led a Scrum team to implement core features: customer onboarding, settlement workflows, accounting modules, card-on-file, purchase lifecycle management, and loyalty-based incentive programs.
+    \item Delivered a system that scaled rapidly to support 20,000 physical retail stores, 5,000 e-commerce merchants, and over 200,000 onboarded customers.
+\end{itemize}
+\resumeItemListEnd
+
+\vspace{2pt}
+
+\resumeSubheading
+{Software Engineer → Senior Software Engineer → Tech Lead}{2014 - 2021}
+{TMA Solutions - one of Vietnam's leading software outsourcing firms}{}
+
+\resumeJobDescription{Progressed from Software Engineer to Tech Lead, delivering enterprise-grade software solutions for global clients such as Nokia, Alcatel-Lucent, Philips, Broadcom Inc., TecAlliance, and more.}
+
+\resumeItemListStart
+\resumeItem{\textbf{Designed and led implementation of end-to-end architectures} for 5+ enterprise-scale client engagements}
+\begin{itemize}[leftmargin=0.15in, label={--}, itemsep=0pt, topsep=1pt]
+    \item Led full-lifecycle development across multiple domains including telecom, and automotive.
+    \item Established technical standards, best practices, and documentation frameworks that improved long-term code quality.
+    \item Mentored and led teams of up to 20 developers, providing architectural guidance, hands-on support, and career growth coaching.
+\end{itemize}
+
+\resumeItem{\textbf{FleetManager – SaaS Fleet Management Platform}}
+\begin{itemize}[leftmargin=0.15in, label={--}, itemsep=0pt, topsep=1pt]
+    \item Led frontend architecture using Angular monorepo, supporting multiple interfaces including Admin Portal and Workshop Portal.
+    \item Built RESTful APIs with ASP.NET Web API, integrated with Apache Kafka for event-driven communication, and deployed via Docker + Kubernetes for scalability and resilience.
+\end{itemize}
+
+\resumeItem{\textbf{Chatbot \& Enterprise Search Solutions}}
+\begin{itemize}[leftmargin=0.15in, label={--}, itemsep=0pt, topsep=1pt]
+    \item Led a team to deliver 4 Google Cloud Search applications for enterprises like Broadcom Inc. and Philips, enabling unified search across internal knowledge bases and business systems.
+    \item Implemented full-stack solutions using Java, Spring Framework, RESTful APIs, ReactJS, Google Cloud, Google Cloud Search, and MySQL.
+\end{itemize}
+
+\resumeItem{\textbf{Task Center Platform – Network Device Management System}}
+\begin{itemize}[leftmargin=0.15in, label={--}, itemsep=0pt, topsep=1pt]
+    \item Replaced a legacy desktop application with a modern web-based system to manage thousands of network devices at scale.
+    \item Built a modular, component-driven architecture reused across 10+ admin applications, significantly improving development efficiency.
+    \item Developed dynamic UI rendering components, allowing administrators to configure device management forms without code changes.
+    \item Created a library of 20 reusable core components, shared libraries, and skeleton apps, reducing average page development time from days to under 3 hours.
+    \item Full-stack implementation using Java, Spring Framework, RESTful APIs, Microservices, MySQL, and AngularJS.
+\end{itemize}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------SKILLS & EXPERTISE----------
+\section{SKILLS \& EXPERTISE}
+\resumeItemListStart
+\resumeItem{\textbf{Solution Architecture \& Engineering}: Cloud-Native Design, Microservices, Serverless (AWS), Event-Driven Systems, Agile/Scrum}
+\resumeItem{\textbf{Cloud \& DevOps}: AWS (Lambda, API Gateway, DynamoDB, EKS), Docker, Kubernetes, CI/CD}
+\resumeItem{\textbf{Backend Engineering}: Java, Spring Boot, Python, Kafka, Observability}
+\resumeItem{\textbf{Fintech \& Digital Banking}: Lending (BNPL, Merchant Cash Advance), Core Banking Integration, Payment Gateways, Mambu}
+\resumeItem{\textbf{Tools}: Git, Jira, Databrick, Datadog, Segment, Angular, React}
+\resumeItemListEnd
+
+%----------HONORS & AWARDS----------
+\section{HONORS \& AWARDS}
+\resumeItemListStart
+\resumeItem{\textbf{Top Performance Employee of the Year} – \textit{Tyme}, 2023, 2024}
+\resumeItem{\textbf{Top Performing Employee (5 consecutive years)} – \textit{TMA Solutions}, 2016–2020}
+\resumeItem{\textbf{Nokia High Performance Award} – \textit{TMA Solutions}, 2015}
+\begin{itemize}[leftmargin=0.15in, label={--}, itemsep=0pt, topsep=1pt]
+    \item \textit{Recognized for outstanding technical performance, leadership, and impact across multiple product teams}
+\end{itemize}
+\resumeItemListEnd
+
+%----------CERTIFICATES----------
+\section{CERTIFICATES}
+\resumeItemListStart
+\resumeItem{\textbf{AWS Certified Solutions Architect – Associate} – \textit{Amazon Web Services}, 2023}
+\resumeItem{\textbf{AWS Certified Developer – Associate} – \textit{Amazon Web Services}, 2024}
+\resumeItemListEnd
+
+%----------EDUCATION----------
+\section{EDUCATION}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Bachelor of Information Technology}{2010 - 2013}
+{CTU University}{}
+\resumeSubHeadingListEnd
+
+\end{document}
